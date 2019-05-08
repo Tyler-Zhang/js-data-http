@@ -408,6 +408,7 @@ Adapter.extend({
     opts.params = this.getParams(opts)
     opts.params = this.queryTransform(mapper, opts.params, opts)
     opts.suffix = this.getSuffix(mapper, opts)
+    opts.with = opts.pass
     return Adapter.prototype.create.call(this, mapper, props, opts)
   },
 
@@ -428,6 +429,7 @@ Adapter.extend({
     opts.params = this.getParams(opts)
     opts.params = this.queryTransform(mapper, opts.params, opts)
     opts.suffix = this.getSuffix(mapper, opts)
+    opts.with = opts.pass
     return Adapter.prototype.createMany.call(this, mapper, props, opts)
   },
 
@@ -1007,6 +1009,7 @@ Adapter.extend({
     opts.params = this.getParams(opts)
     opts.params = this.queryTransform(mapper, opts.params, opts)
     opts.suffix = this.getSuffix(mapper, opts)
+    opts.with = opts.pass
     return Adapter.prototype.update.call(this, mapper, id, props, opts)
   },
 
@@ -1029,6 +1032,7 @@ Adapter.extend({
     utils.deepMixIn(opts.params, query)
     opts.params = this.queryTransform(mapper, opts.params, opts)
     opts.suffix = this.getSuffix(mapper, opts)
+    opts.with = opts.pass
     return Adapter.prototype.updateAll.call(this, mapper, props, query, opts)
   },
 
@@ -1050,6 +1054,7 @@ Adapter.extend({
     opts.params = this.getParams(opts)
     opts.params = this.queryTransform(mapper, opts.params, opts)
     opts.suffix = this.getSuffix(mapper, opts)
+    opts.with = opts.pass
     return Adapter.prototype.updateMany.call(this, mapper, records, opts)
   }
 })
